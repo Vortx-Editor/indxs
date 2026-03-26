@@ -19,7 +19,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden;}
 
-        /* --- الهيدر (الشريط العلوي) - الشعار صار يتوسط الصفحة --- */
+        /* --- الهيدر (الشريط العلوي) --- */
         header {
             position: fixed; top: 0; width: 100%; 
             background: linear-gradient(to bottom, rgba(5,5,5,0.98), rgba(5,5,5,0));
@@ -27,21 +27,19 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* تزيين الشعار ليكون بارزاً وفخماً */
         .logo { 
-            font-family: 'Playfair Display', serif; /* خط كلاسيكي فخم للوقو */
+            font-family: 'Playfair Display', serif; 
             font-size: 32px; font-weight: 700; color: var(--gold); 
             text-decoration: none; letter-spacing: 3px;
             border: 2px solid var(--gold); padding: 5px 15px; border-radius: 3px;
             transition: 0.3s;
-            position: absolute; left: 50%; transform: translateX(-50%); /* يتوسط الهيدر */
+            position: absolute; left: 50%; transform: translateX(-50%);
         }
         .logo:hover { 
             background-color: var(--gold); color: #000; 
             box-shadow: 0 0 20px var(--gold-light);
         }
         
-        /* روابط الهيدر الأيمن والأيسر */
         .nav-links-right, .nav-links-left { display: flex; align-items: center; }
         .nav-link { 
             color: var(--text-light); text-decoration: none; 
@@ -50,19 +48,17 @@
         }
         .nav-link:hover { color: var(--gold); }
 
-        /* --- القسم الأول: الواجهة السينمائية (fullscreen) --- */
+        /* --- القسم الأول: الواجهة السينمائية --- */
         .hero {
             height: 100vh; width: 100%;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             padding: 0 10%; text-align: center;
-            /* الصورة الخلفية العنابية - مع تعتيم أسود قوي في الأسفل للأزرار */
             background: linear-gradient(to top, rgba(5,5,5,1) 15%, rgba(5,5,5,0.5) 60%, rgba(5,5,5,0.7) 100%), 
                         url('hero-bg.jpg') center/cover no-repeat;
         }
         
         .hero-content { max-width: 800px; }
         
-        /* عبارة ترحيبية صغيرة لإضافة "الدفء" */
         .hero-welcome {
             color: var(--gold); font-size: 1.1rem; font-weight: 700;
             letter-spacing: 2px; margin-bottom: 15px; display: block;
@@ -76,7 +72,7 @@
         .hero h1 span { color: var(--gold); text-shadow: 0 0 20px var(--gold-light); }
         .hero p { font-size: 1.5rem; margin-bottom: 50px; color: var(--text-gray); font-weight: 400; line-height: 1.6;}
 
-        /* أزرار الإجراء السريع - حركات جذابة وصاخبة بذكاء */
+        /* أزرار الإجراء السريع */
         .cta-group { display: flex; gap: 25px; justify-content: center; }
         
         .btn {
@@ -86,11 +82,10 @@
             text-transform: uppercase; letter-spacing: 1px;
         }
 
-        /* زر المنيو الذهبي - مع حركة (نبض) لجذب العين فوراً */
         .btn-gold { 
             background-color: var(--gold); color: #000; 
             box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
-            animation: pulse-gold 2s infinite; /* حركة النبض */
+            animation: pulse-gold 2s infinite; 
         }
         
         @keyframes pulse-gold {
@@ -103,18 +98,39 @@
             transform: translateY(-3px) scale(1.02); 
             background-color: var(--gold-light);
             box-shadow: 0 10px 30px rgba(197, 160, 89, 0.6);
-            animation: none; /* إيقاف النبض عند الوقوف عليه */
+            animation: none; 
         }
         
-        .btn-outline { 
-            border: 2px solid var(--text-light); color: var(--text-light);
-        }
+        .btn-outline { border: 2px solid var(--text-light); color: var(--text-light); }
         .btn-outline:hover { 
             background-color: var(--gold); border-color: var(--gold); color: #000;
             transform: translateY(-3px); box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
         }
 
-        /* زر الواتساب العائم */
+        /* --- قسم المنيو --- */
+        .menu-section { padding: 100px 10%; background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);}
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title { font-family: 'Cairo', sans-serif; font-size: 3rem; color: var(--gold); margin-bottom: 10px;}
+        .section-subtitle { color: var(--text-gray); font-size: 1.1rem; }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .menu-card { 
+            background: rgba(30, 30, 30, 0.5); padding: 30px; border-radius: 10px; 
+            border: 1px solid rgba(255,255,255,0.03); transition: 0.3s; 
+            display: flex; justify-content: space-between; align-items: flex-start;
+        }
+        .menu-card:hover { transform: translateY(-5px); border-color: var(--maroon); background: rgba(30,30,30,0.8);}
+        
+        .item-details h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--text-light); }
+        .item-details p { color: var(--text-gray); font-size: 0.95rem; }
+        .item-price { font-size: 1.4rem; font-weight: 900; color: var(--gold); font-family: 'Cairo', sans-serif;}
+
+        /* --- الفوتر (معلومات التواصل) --- */
+        footer { background-color: #020202; padding: 60px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); margin-bottom: 20px; text-decoration: none; display: inline-block; letter-spacing: 2px;}
+        .footer-info p { color: var(--text-gray); margin-bottom: 10px; font-size: 1rem;}
+        
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white;
             width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
@@ -123,12 +139,11 @@
         }
         .whatsapp-float:hover { transform: scale(1.15) rotate(10deg); box-shadow: 0 10px 40px rgba(37, 211, 102, 0.8); }
 
-        /* تعديلات الجوال (Responsiveness) */
+        /* تعديلات الجوال */
         @media (max-width: 768px) {
             header { padding: 15px 20px; flex-direction: column; text-align: center; height: 100px;}
             .logo { font-size: 24px; position: static; transform: none; margin-bottom: 10px;}
-            .nav-links-right, .nav-links-left { display: none; } /* تبسيط الجوال في النموذج المبدئي */
-            
+            .nav-links-right, .nav-links-left { display: none; }
             .hero { padding: 0 20px; text-align: center; justify-content: flex-end; padding-bottom: 80px;}
             .hero h1 { font-size: 3.5rem; }
             .hero p { font-size: 1.2rem; margin-bottom: 40px; }
@@ -143,9 +158,7 @@
         <div class="nav-links-right">
             <a href="#menu" class="nav-link">المنيو التجريبي</a>
         </div>
-        
         <a href="#" class="logo">CLÉ CAFE</a>
-        
         <div class="nav-links-left">
             <a href="https://goo.gl/maps/wtCuVPJ1urCQB1rW7" target="_blank" class="nav-link">موقعنا</a>
         </div>
@@ -164,10 +177,49 @@
         </div>
     </section>
 
+    <section id="menu" class="menu-section">
+        <div class="section-header">
+            <h2 class="section-title">قائمتنا (نموذج مبدئي)</h2>
+            <p class="section-subtitle">*سيتم إضافة المنيو الحقيقي كامل بالصور والأسعار بعد الاعتماد والتحقق</p>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="item-details">
+                    <h3>تيراميسو كلي المُميز</h3>
+                    <p>خلطة كلي الخاصة من الاسبريسو والماسكار بوني</p>
+                </div>
+                <div class="item-price">-- ر.س</div>
+            </div>
+            <div class="menu-card">
+                <div class="item-details">
+                    <h3>V60 قهوة مقطرة</h3>
+                    <p>اختياركم من أفضل المحاصيل العالمية</p>
+                </div>
+                <div class="item-price">-- ر.س</div>
+            </div>
+            <div class="menu-card">
+                <div class="item-details">
+                    <h3>برانش متكامل</h3>
+                    <p>خيارات متنوعة للفطور والمتأخر</p>
+                </div>
+                <div class="item-price">-- ر.س</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#" class="footer-logo">CLÉ CAFE - كلي</a>
+        <div class="footer-info">
+            <p>📍 جدة - حي الروضة</p>
+            <p>⏰ مفتوح من 7:00 صباحاً حتى 3:00 فجراً</p>
+            <p style="font-size: 12px; color: #444; margin-top: 30px;">برمجة وتطوير: مبرمج الواجهات المحترف</p>
+        </div>
+    </footer>
+
     <a href="https://wa.me/966530904423?text=السلام عليكم، حاب استفسر عن الطلبات من موقعكم" target="_blank" class="whatsapp-float">
         💬
     </a>
 
 </body>
 </html>
-
